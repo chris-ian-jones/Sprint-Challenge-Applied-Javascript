@@ -41,7 +41,7 @@ body {
   justify-content: none;
   align-items: center;
   flex-direction: column;
-  background-color: pink;
+  background-color: #f1f1f1;
   color: #333;
   font-family: 'PT Sans', sans-serif;
 }
