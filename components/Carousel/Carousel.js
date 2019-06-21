@@ -20,12 +20,23 @@ class Carousel {
         // create NodeList of images
         this.imagesNodeList = this.element.getElementsByTagName('img')
         
+        this.imagesNodeListLength = this.imagesNodeList.length
+        this.lastImageIndex = this.imagesNodeListLength -1 
+
         // set index of NodeLists images to display the image
         this.imagesNodeList[this.currentIndex].style.display = "block"
     }   
 
     clickLeftButton(){
+        if (this.currentIndex === 0) {
 
+            this.imagesNodeList[this.currentIndex].style.display = "none"
+
+            this.currentIndex = this.lastImageIndex
+
+            this.imagesNodeList[this.currentIndex].style.display = "block"
+
+        } else {
         // remove the display property of the current image
         this.imagesNodeList[this.currentIndex].style.display = "none"
         
@@ -34,9 +45,18 @@ class Carousel {
 
         // add display property to current index of NodeList of images
         this.imagesNodeList[this.currentIndex].style.display = "block"
+        }
       }
     clickRightButton(){
+        if (this.currentIndex === this.imagesNodeList.length - 1) {
 
+            this.imagesNodeList[this.currentIndex].style.display = "none"
+
+            this.currentIndex = 0
+
+            this.imagesNodeList[this.currentIndex].style.display = "block"
+
+        } else {
         // remove the display property of the current image
         this.imagesNodeList[this.currentIndex].style.display = "none"
 
@@ -46,7 +66,7 @@ class Carousel {
         // add display property to current index of NodeList of images
         this.imagesNodeList[this.currentIndex].style.display = "block"
       }
-
+    }
 }
 
 // Grab reference to carousel
