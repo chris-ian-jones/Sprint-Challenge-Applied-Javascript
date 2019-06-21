@@ -2,13 +2,10 @@ class Carousel {
     constructor(element){
         // assign this.element to the element DOM reference
         this.element = element
-        // console.log(this.element)
 
         // assign the left and right buttons
         this.leftButton = this.element.querySelector('.left-button')
         this.rightButton = this.element.querySelector('.right-button')
-        // console.log(this.leftButton)
-        // console.log(this.rightButton)
 
         // add event listeners for clicks of buttons, calling click methods
         this.leftButton.addEventListener('click', () => this.clickLeftButton())
@@ -20,6 +17,7 @@ class Carousel {
         // create NodeList of images
         this.imagesNodeList = this.element.getElementsByTagName('img')
         
+        // define index of last image in NodeList 
         this.imagesNodeListLength = this.imagesNodeList.length
         this.lastImageIndex = this.imagesNodeListLength -1 
 
@@ -28,12 +26,17 @@ class Carousel {
     }   
 
     clickLeftButton(){
+
+        // if statement to check if current image is the first of NodeList
         if (this.currentIndex === 0) {
 
+            // remove the display property of the current image
             this.imagesNodeList[this.currentIndex].style.display = "none"
 
+            // set the current index to the that of last image in NodeList
             this.currentIndex = this.lastImageIndex
 
+            // add display property to current index of NodeList of images
             this.imagesNodeList[this.currentIndex].style.display = "block"
 
         } else {
@@ -48,12 +51,17 @@ class Carousel {
         }
       }
     clickRightButton(){
+
+        // if statement to check if current image is the last of NodeList
         if (this.currentIndex === this.imagesNodeList.length - 1) {
 
+            // remove the display property of the current image
             this.imagesNodeList[this.currentIndex].style.display = "none"
 
+            // set the current index to the that of first image in NodeList
             this.currentIndex = 0
 
+            // add display property to current index of NodeList of images
             this.imagesNodeList[this.currentIndex].style.display = "block"
 
         } else {
