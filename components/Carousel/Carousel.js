@@ -26,7 +26,7 @@ class Carousel {
     }   
 
     clickLeftButton(){
-
+        
         // if statement to check if current image is the first of NodeList
         if (this.currentIndex === 0) {
 
@@ -37,7 +37,8 @@ class Carousel {
             this.currentIndex = this.lastImageIndex
 
             // add display property to current index of NodeList of images
-            this.imagesNodeList[this.currentIndex].style.display = "block"
+            this.imagesNodeList[this.currentIndex].style.display = "inline"
+            // TweenMax.from(this.imagesNodeList[this.currentIndex], 1, {x: 50})
 
         } else {
         // remove the display property of the current image
@@ -47,7 +48,8 @@ class Carousel {
         this.currentIndex = this.currentIndex - 1
 
         // add display property to current index of NodeList of images
-        this.imagesNodeList[this.currentIndex].style.display = "block"
+        this.imagesNodeList[this.currentIndex].style.display = "inline"
+        // TweenMax.from(this.imagesNodeList[this.currentIndex], 1, {x: 50})
         }
       }
     clickRightButton(){
@@ -62,7 +64,8 @@ class Carousel {
             this.currentIndex = 0
 
             // add display property to current index of NodeList of images
-            this.imagesNodeList[this.currentIndex].style.display = "block"
+            this.imagesNodeList[this.currentIndex].style.display = "inline"
+            // TweenMax.from(this.imagesNodeList[this.currentIndex], 1, {x: -50})
 
         } else {
         // remove the display property of the current image
@@ -72,7 +75,8 @@ class Carousel {
         this.currentIndex = this.currentIndex + 1
 
         // add display property to current index of NodeList of images
-        this.imagesNodeList[this.currentIndex].style.display = "block"
+        this.imagesNodeList[this.currentIndex].style.display = "inline"
+        // TweenMax.from(this.imagesNodeList[this.currentIndex], 1, {x: -50})
       }
     }
 }
